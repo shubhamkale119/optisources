@@ -39,7 +39,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="text-2xl font-bold mb-4">
-              HealthTech Solutions
+              Optisource
             </div>
             <p className="text-white/80 mb-6 leading-relaxed">
               Transforming healthcare revenue management through innovative technology and expert services. 

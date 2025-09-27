@@ -7,6 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,14 +22,22 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-background border-b border-border shadow-soft">
+    <nav className="bg-white border border-border rounded-3xl mx-4 my-6 shadow-xl hover:shadow-2xl transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+ 
+           <img 
+              src={logo} 
+              alt="Optisource Logo" 
+               className="h-12 w-12 object-contain"
+              
+            />
+            <div className="text-4xl font-extrabold">
+            <span className="text-orange-500">Optisources</span>
+            </div>
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              HealthTech Solutions
-            </div>
+            
           </div>
 
           {/* Desktop Navigation */}

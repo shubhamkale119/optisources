@@ -17,15 +17,15 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 13% 18%;
 
-    --primary: 214 84% 56%;
+    --primary: 142 76% 36%;
     --primary-foreground: 0 0% 98%;
-    --primary-light: 214 76% 67%;
-    --primary-dark: 214 84% 46%;
+    --primary-light: 142 69% 58%;
+    --primary-dark: 142 76% 26%;
 
-    --secondary: 180 62% 55%;
+    --secondary: 25 95% 53%;
     --secondary-foreground: 0 0% 98%;
-    --secondary-light: 180 62% 65%;
-    --secondary-dark: 180 62% 45%;
+    --secondary-light: 25 95% 63%;
+    --secondary-dark: 25 95% 43%;
 
     --accent: 214 32% 91%;
     --accent-foreground: 220 13% 18%;
@@ -38,13 +38,13 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 214 84% 56%;
+    --ring: 142 76% 36%;
 
     /* Healthcare-specific colors */
-    --healthcare-blue: 214 84% 56%;
-    --healthcare-teal: 180 62% 55%;
+    --healthcare-blue: 142 76% 36%;
+    --healthcare-teal: 25 95% 53%;
     --healthcare-navy: 220 39% 11%;
-    --healthcare-light-blue: 214 32% 91%;
+    --healthcare-light-blue: 142 30% 91%;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
@@ -85,15 +85,15 @@ All colors MUST be HSL.
     --popover: 220 26% 14%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 214 76% 67%;
+    --primary: 142 69% 58%;
     --primary-foreground: 220 39% 11%;
-    --primary-light: 214 76% 77%;
-    --primary-dark: 214 76% 57%;
+    --primary-light: 142 69% 68%;
+    --primary-dark: 142 69% 48%;
 
-    --secondary: 180 62% 65%;
+    --secondary: 25 95% 63%;
     --secondary-foreground: 220 39% 11%;
-    --secondary-light: 180 62% 75%;
-    --secondary-dark: 180 62% 55%;
+    --secondary-light: 25 95% 73%;
+    --secondary-dark: 25 95% 53%;
 
     --accent: 220 26% 18%;
     --accent-foreground: 0 0% 98%;
@@ -106,11 +106,11 @@ All colors MUST be HSL.
 
     --border: 220 26% 18%;
     --input: 220 26% 18%;
-    --ring: 214 76% 67%;
+    --ring: 142 69% 58%;
 
     /* Healthcare-specific colors for dark mode */
-    --healthcare-blue: 214 76% 67%;
-    --healthcare-teal: 180 62% 65%;
+    --healthcare-blue: 142 69% 58%;
+    --healthcare-teal: 25 95% 63%;
     --healthcare-navy: 220 39% 11%;
     --healthcare-light-blue: 220 26% 18%;
     

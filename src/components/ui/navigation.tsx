@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/optisources-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,14 +26,15 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
  
-           <img 
-              src={logo} 
-              alt="Optisource Logo" 
-               className="h-12 w-12 object-contain"
-              
-            />
+           <a href="#home" className="flex items-center">
+             <img 
+               src={logo} 
+               alt="OptiSources Logo" 
+               className="h-12 object-contain"
+           />
+      </a>
             <div className="text-4xl font-extrabold">
-            <span className="text-orange-500">Optisources</span>
+            <span className="text-orange-500">OptiSources</span>
             </div>
           {/* Logo */}
           <div className="flex-shrink-0">

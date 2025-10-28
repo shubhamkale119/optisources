@@ -7,6 +7,21 @@ All colors MUST be HSL.
 */
 
 @layer base {
+
+  .hero-paragraph {
+    color: hsl(var(--primary-foreground)); /* White */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Subtle shadow to improve visibility */
+  }
+
+  .hero-heading {
+    color: hsl(var(--primary-foreground)); /* White */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Optional: adds shadow for better readability */
+  }
+  .bg-gradient-hero {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Gradual fade */
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 220 13% 18%;
@@ -170,5 +185,25 @@ All colors MUST be HSL.
   /* Logo name = NAVY BLUE text */
   .logo-name {
     color: hsl(var(--healthcare-navy));
+  }
+
+  /* Stat number styles for high contrast on hero images */
+  .stat-number {
+    /* Strong white numbers with heavy, soft shadow so they pop on any image */
+    color: hsl(var(--primary-foreground)); /* white */
+    text-shadow: 0 8px 30px rgba(0,0,0,0.75), 0 2px 0 rgba(255,255,255,0.02);
+    -webkit-text-stroke: 0.6px rgba(0,0,0,0.35);
+    font-weight: 900;
+    letter-spacing: -0.6px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Optional small badge behind the number if you prefer a pill-style highlight */
+  .stat-badge {
+    display: inline-block;
+    padding: 0.125rem 0.75rem; /* small horizontal pill */
+    background: rgba(255,255,255,0.06);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(6px);
   }
 }

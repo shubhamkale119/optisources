@@ -22,40 +22,53 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-white border border-border rounded-3xl mx-4 my-6 shadow-xl hover:shadow-2xl transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
- 
-           <a href="#home" className="flex items-center">
-             <img 
-               src={logo} 
-               alt="OptiSources Logo" 
-               className="h-12 object-contain"
-           />
-      </a>
-            <div className="text-4xl font-extrabold">
-            <span className="text-orange-500">OptiSources</span>
-            </div>
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            
+    <nav className="fixed w-full z-50 transition-all duration-300">
+      <div className="max-w-[95%] mx-auto px-2 sm:px-4 lg:px-6 my-2 sm:my-4">
+        <div className="flex justify-between items-center h-16 sm:h-18 lg:h-20 bg-white/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-xl px-4 sm:px-8 lg:px-12 border border-white/20 transition-all duration-300">
+          
+          {/* Logo Section */}
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <a href="#home" className="flex items-center">
+              <img 
+                src={logo} 
+                alt="OptiSources Logo" 
+                className="h-8 sm:h-10 lg:h-12 object-contain"
+              />
+            </a>
           </div>
+            <div className="flex items-center">
+              <a href="#home" className="flex items-center">
+                <div className="relative">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight flex items-center">
+                    <span className="relative inline-flex items-center justify-center">
+                      <span className="text-[#FF7200]">O</span>
+                      <span className="absolute top-1 left-[40%] text-[#4CAF50] text-sm sm:text-base lg:text-lg font-bold">+</span>
+                    </span>
+                    <span className="text-[#FF7200]">pti</span>
+                    <span className="text-[#002B80]">Sources</span>
+                  </div>
+                </div>
+              </a>
+            </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#home" className="text-foreground hover:text-primary transition-colors duration-200">
+          <div className="hidden md:block flex-1 max-w-2xl mx-8">
+            <div className="flex items-center justify-center space-x-4 lg:space-x-8 text-sm lg:text-base">
+              <a href="#home" 
+                className="text-foreground hover:text-primary py-2 px-3 rounded-lg transition-all duration-200 hover:bg-primary/5">
                 Home
               </a>
-              <a href="#about" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+              <a href="#about" 
+                className="text-muted-foreground hover:text-primary py-2 px-3 rounded-lg transition-all duration-200 hover:bg-primary/5">
                 About
               </a>
               
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-muted-foreground hover:text-primary transition-colors duration-200">
+                <DropdownMenuTrigger 
+                  className="flex items-center text-muted-foreground hover:text-primary py-2 px-3 rounded-lg transition-all duration-200 hover:bg-primary/5">
                   Services <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
+                <DropdownMenuContent className="w-56 animate-in slide-in-from-top-2">
                   {services.map((service, index) => (
                     <DropdownMenuItem key={index} className="cursor-pointer">
                       {service}
@@ -64,7 +77,8 @@ const Navigation = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+              <a href="#contact" 
+                className="text-muted-foreground hover:text-primary py-2 px-3 rounded-lg transition-all duration-200 hover:bg-primary/5">
                 Contact
               </a>
             </div>
@@ -72,7 +86,9 @@ const Navigation = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Button variant="default" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
+            <Button 
+              variant="default" 
+              className="bg-gradient-primary hover:shadow-glow hover:scale-105 transform transition-all duration-300 text-sm lg:text-base px-4 lg:px-6">
               Request Demo
             </Button>
           </div>
@@ -83,40 +99,49 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center"
+              className="inline-flex items-center justify-center hover:bg-primary/5"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card border-t border-border">
-              <a href="#home" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
-                Home
-              </a>
-              <a href="#about" className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors">
-                About
-              </a>
-              <div className="px-3 py-2">
-                <div className="text-muted-foreground mb-2">Services</div>
-                <div className="pl-4 space-y-1">
-                  {services.map((service, index) => (
-                    <div key={index} className="text-sm text-muted-foreground hover:text-primary cursor-pointer py-1">
-                      {service}
-                    </div>
-                  ))}
+          <div className="md:hidden mt-2">
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border border-white/20 overflow-hidden">
+              <div className="px-3 py-4 space-y-1">
+                <a href="#home" 
+                  className="block px-4 py-3 text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200">
+                  Home
+                </a>
+                <a href="#about" 
+                  className="block px-4 py-3 text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200">
+                  About
+                </a>
+                <div className="px-4 py-3">
+                  <div className="text-muted-foreground font-medium mb-2">Services</div>
+                  <div className="space-y-2">
+                    {services.map((service, index) => (
+                      <div 
+                        key={index} 
+                        className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 cursor-pointer py-2 px-3 rounded-lg transition-all duration-200">
+                        {service}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <a href="#contact" className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors">
-                Contact
-              </a>
-              <div className="px-3 py-2">
-                <Button variant="default" className="w-full bg-gradient-primary">
-                  Request Demo
-                </Button>
+                <a href="#contact" 
+                  className="block px-4 py-3 text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200">
+                  Contact
+                </a>
+                <div className="px-4 py-3">
+                  <Button 
+                    variant="default" 
+                    className="w-full bg-gradient-primary hover:shadow-glow hover:scale-105 transform transition-all duration-300">
+                    Request Demo
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

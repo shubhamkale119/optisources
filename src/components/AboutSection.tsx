@@ -41,78 +41,87 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Text Content */}
           <div>
-            <div className="text-sm font-semibold text-primary mb-4 tracking-wide uppercase">
-              About HealthTech Solutions
+            <div className="text-xs font-semibold text-[#FF7200] mb-4 tracking-wider uppercase">
+              ABOUT HEALTHTECH SOLUTIONS
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Transforming Healthcare Through 
-              <span className="text-primary"> Innovation & Excellence</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-6 leading-tight">
+              Transforming Healthcare Through
+              <br />
+              Innovation & Excellence
             </h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              We are a leading provider of technology-enabled healthcare solutions, specializing in revenue cycle management, 
-              medical coding, and analytics. Our mission is to help healthcare organizations achieve optimal financial performance 
-              while maintaining the highest standards of compliance and patient care.
-            </p>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
-              With over 15 years of experience and a team of certified professionals, we combine deep healthcare expertise 
-              with cutting-edge AI technology to deliver measurable results for our clients.
-            </p>
+            <div className="space-y-4">
+              <p className="text-base text-gray-600 leading-relaxed">
+                We are a leading provider of technology-enabled healthcare solutions, 
+                specializing in revenue cycle management, medical coding, and analytics. 
+                Our mission is to help healthcare organizations achieve optimal financial performance 
+                while maintaining the highest standards of compliance and patient care.
+              </p>
+              <p className="text-base text-gray-600 leading-relaxed">
+                With over 15 years of experience and a team of certified professionals, we combine 
+                deep healthcare expertise with cutting-edge AI technology to deliver measurable 
+                results for our clients.
+              </p>
+            </div>
 
             {/* Values List */}
-            <div className="space-y-3 mb-8">
+            <div className="space-y-3 mt-6 mb-8">
               {values.map((value, index) => (
-                <div key={index} className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
-                  <span className="text-muted-foreground">{value}</span>
+                <div key={index} className="flex items-start group">
+                  <CheckCircle className="h-5 w-5 text-[#4CAF50] mt-0.5 mr-3 flex-shrink-0 group-hover:text-[#FF7200] transition-colors duration-200" />
+                  <span className="text-gray-700 text-base group-hover:text-gray-900 transition-colors duration-200">{value}</span>
                 </div>
               ))}
             </div>
 
-            <Button size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
-              Learn More About Us
-            </Button>
+            <div className="flex gap-4">
+              <Button 
+                size="default" 
+                className="bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] hover:from-[#43A047] hover:to-[#1B5E20] text-white shadow-md hover:shadow-lg transition-all duration-300 px-6 py-2 rounded-md"
+              >
+                Learn More
+              </Button>
+              <Button
+                size="default"
+                variant="outline"
+                className="border-2 border-[#4CAF50] text-[#4CAF50] hover:bg-[#4CAF50]/5 hover:border-[#2E7D32] hover:text-[#2E7D32] transition-all duration-300 px-6 py-2 rounded-md"
+              >
+                Contact Us
+              </Button>
+            </div>
           </div>
 
           {/* Image */}
           <div className="relative">
-            <div className="rounded-lg overflow-hidden shadow-strong">
+            <div className="rounded-xl overflow-hidden shadow-xl">
               <img
                 src={medicalTechImage}
                 alt="Medical technology and analytics"
-                className="w-full h-auto object-cover"
+                className="w-full h-[480px] object-cover"
               />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#4CAF50]/10 to-[#2E7D32]/20"></div>
             </div>
-            {/* Floating Card */}
-            <Card className="absolute -bottom-6 -left-6 bg-card border-border shadow-strong">
+            {/* Floating Stats Card */}
+            <Card className="absolute -bottom-6 -left-6 bg-white rounded-lg border-none shadow-xl">
               <CardContent className="p-6">
-                <div className="text-2xl font-bold text-primary">$2.5B+</div>
-                <div className="text-sm text-muted-foreground">Revenue Optimized</div>
+                <div className="text-2xl font-bold bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] bg-clip-text text-transparent">
+                  $2.5B+
+                </div>
+                <div className="text-sm text-gray-600 font-medium">
+                  Revenue Optimized
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
 
-        {/* Achievements Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {achievements.map((achievement, index) => (
-            <Card key={index} className="text-center border-border/50 hover:shadow-soft transition-all duration-300 group">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-300">
-                  <achievement.icon className="h-6 w-6 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-foreground mb-2">{achievement.number}</div>
-                <div className="text-lg font-semibold text-primary mb-2">{achievement.label}</div>
-                <div className="text-sm text-muted-foreground">{achievement.description}</div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        {/* Achievement Grid - Removed as per screenshot */}
       </div>
     </section>
   );

@@ -10,13 +10,21 @@ const HeroSection = () => { return (
 <section id="home" className="relative min-h-screen flex items-center overflow-hidden"> 
 
         {/* Background Image with Overlay */} 
-        <div className="absolute inset-0"> <img src={heroImage} alt="Professional healthcare team" className="w-full h-full object-cover" /> 
-            <div className="absolute inset-0 bg-gradient-hero"></div> 
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Professional healthcare team" className="w-full h-full object-cover" /> 
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/70 via-emerald-500/65 to-blue-600/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
         </div>
          {/* Content */} 
          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
-          <div className="max-w-3xl"> <h1 className="hero-heading text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"> Transform Healthcare <span className="block text-secondary-light">Revenue Management</span> </h1> 
-          <p className="hero-paragraph text-xl md:text-2xl text-black/90 mb-15 leading-relaxedd"> Empowering healthcare organizations with AI-powered solutions for revenue cycle optimization, medical coding excellence, and compliance management. </p> 
+          <div className="max-w-3xl">
+            <h1 className="hero-heading text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Transform Healthcare
+              <span className="block text-[#FF7200] drop-shadow-lg">Revenue Management</span>
+            </h1>
+            <p className="hero-paragraph text-xl md:text-2xl text-white mb-15 leading-relaxed font-light">
+              Empowering healthcare organizations with AI-powered solutions for revenue cycle optimization, medical coding excellence, and compliance management.
+            </p>
           <div className="flex flex-col sm:flex-row gap-8 mt-8"> 
             <Button 
               size="lg" 
@@ -36,32 +44,19 @@ const HeroSection = () => { return (
             
             
             {/* Stats */} 
-            <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8"> 
-              <div className="text-center sm:text-left p-4 backdrop-blur-sm bg-black/45 rounded-xl hover:bg-black/50 transition-all duration-300"> 
-                  <div className="text-4xl md:text-6xl lg:text-7xl leading-none">
-                    <span className="stat-badge text-white font-black drop-shadow-[0_8px_28px_rgba(0,0,0,0.6)]">
-                      <Counter end={98} suffix="%" />
-                    </span>
+            <div className="mt-16 grid grid-cols-2 gap-12 max-w-xl mx-auto"> 
+              <div className="text-center"> 
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-none tracking-tight">
+                    <Counter end={98} suffix="%" />
                   </div>
-                <div className="text-white/90 mt-2 font-medium">Client Satisfaction</div> 
+                <div className="text-white/90 mt-2 text-sm md:text-base">Client Satisfaction</div> 
               </div>
 
-              <div className="text-center sm:text-left p-4 backdrop-blur-sm bg-black/45 rounded-xl hover:bg-black/50 transition-all duration-300"> 
-                  <div className="text-4xl md:text-6xl lg:text-7xl leading-none">
-                    <span className="stat-badge text-white font-black drop-shadow-[0_8px_28px_rgba(0,0,0,0.6)]">
-                      <Counter end={15} suffix="+" />
-                    </span>
-                  </div> 
-                <div className="text-white/90 mt-2 font-medium">Years Experience</div> 
-              </div>
-
-              <div className="text-center sm:text-left p-4 backdrop-blur-sm bg-black/45 rounded-xl hover:bg-black/50 transition-all duration-300"> 
-                  <div className="text-4xl md:text-6xl lg:text-7xl leading-none">
-                    <span className="stat-badge text-white font-black drop-shadow-[0_8px_28px_rgba(0,0,0,0.6)]">
-                      <Counter end={500} suffix="+" />
-                    </span>
-                  </div> 
-                <div className="text-white/90 mt-2 font-medium">Healthcare Partners</div> 
+              <div className="text-center"> 
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-none tracking-tight">
+                    <Counter end={500} suffix="+" />
+                  </div>
+                <div className="text-white/90 mt-2 text-sm md:text-base">Healthcare Partners</div> 
               </div>
             </div>
           </div>

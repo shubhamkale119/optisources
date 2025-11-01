@@ -9,22 +9,16 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 const ContactSection = () => {
   const contactInfo = [
     {
-      icon: Phone,
-      title: "Phone",
-      details: "+1 (555) 123-4567",
-      subtitle: "Mon-Fri 8AM-6PM EST"
+      icon: Clock,
+      title: "Business Hours",
+      details: "Monday - Friday",
+      subtitle: "9:00 AM - 6:00 PM EST"
     },
     {
-      icon: Mail,
-      title: "Email",
-      details: "info@healthtechsolutions.com",
-      subtitle: "We'll respond within 24 hours"
-    },
-    {
-      icon: MapPin,
-      title: "Office",
-      details: "123 Healthcare Blvd, Suite 500",
-      subtitle: "New York, NY 10001"
+      icon: Clock,
+      title: "Response Time",
+      details: "Within 24 Hours",
+      subtitle: "For all inquiries"
     },
     {
       icon: Clock,
@@ -120,34 +114,43 @@ const ContactSection = () => {
 
           {/* Contact Information */}
           <div className="space-y-6">
-            {contactInfo.map((info, index) => (
-              <Card key={index} className="border-border/50 hover:shadow-soft transition-all duration-300 group">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
-                      <info.icon className="h-6 w-6 text-white" />
+            {contactInfo.map((info, index) => {
+              // compute an explicit color hex for reliable SVG rendering
+              const iconHex = info.title.toLowerCase().includes("office")
+                ? "#FF7200" // orange for locations
+                : info.title.toLowerCase() === "phone" || info.title.toLowerCase() === "email"
+                ? "#16A34A" // green for phone/email
+                : "#FF7200"; // fallback orange
+
+              return (
+                <Card key={index} className="border-border/50 hover:shadow-soft transition-all duration-300 group">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:shadow-glow transition-all duration-300 ring-1 ring-white/20">
+                        <info.icon className="h-8 w-8" strokeWidth={1.8} style={{ color: iconHex }} />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-foreground mb-2">{info.title}</h3>
+                        <p className="text-primary font-medium leading-relaxed whitespace-pre-line">{info.details}</p>
+                        <p className="text-sm text-muted-foreground mt-1 whitespace-pre-line">{info.subtitle}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">{info.title}</h3>
-                      <p className="text-primary font-medium">{info.details}</p>
-                      <p className="text-sm text-muted-foreground">{info.subtitle}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              );
+            })}
 
             {/* CTA Card */}
-            <Card className="bg-gradient-primary text-white border-0 shadow-strong">
-              <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold mb-2">Need Immediate Assistance?</h3>
-                <p className="text-white/90 mb-4">
+            <Card className="bg-gradient-to-br from-orange-400 to-orange-500 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden">
+              <CardContent className="p-8 text-center bg-white/10 backdrop-blur-sm">
+                <h3 className="text-2xl font-bold mb-3 text-white drop-shadow-sm">Need Immediate Assistance?</h3>
+                <p className="text-white text-lg mb-6 leading-relaxed">
                   Speak with one of our healthcare experts today.
                 </p>
                 <Button 
                   variant="secondary" 
                   size="lg" 
-                  className="w-full bg-white text-primary hover:bg-white/90"
+                  className="w-full bg-white text-orange-500 hover:bg-orange-50 hover:scale-105 transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl rounded-xl"
                 >
                   Schedule a Call
                 </Button>

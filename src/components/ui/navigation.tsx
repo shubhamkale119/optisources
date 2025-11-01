@@ -42,7 +42,8 @@ const Navigation = () => {
                   <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight flex items-center">
                     <span className="relative inline-flex items-center justify-center">
                       <span className="text-[#FF7200]">O</span>
-                      <span className="absolute top-1 left-[40%] text-[#4CAF50] text-sm sm:text-base lg:text-lg font-bold">+</span>
+                      {/* center the plus inside the O using flex + inset for consistent alignment */}
+                      <span className="absolute inset-0 flex items-center justify-center text-[#4CAF50] text-sm sm:text-base lg:text-lg font-bold transform -translate-y-0.5">+</span>
                     </span>
                     <span className="text-[#FF7200]">pti</span>
                     <span className="text-[#002B80]">Sources</span>

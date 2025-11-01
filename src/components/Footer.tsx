@@ -47,32 +47,78 @@ const Footer = () => {
             </p>
             
             {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center text-white/80">
-                <Phone className="h-4 w-4 mr-3" />
-                <span>+1 (555) 123-4567</span>
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-white mb-2">India Office</h4>
+                <div className="flex items-start text-white/80">
+                  <MapPin className="h-5 w-5 mr-3 mt-1 flex-shrink-0 text-[#FF7200]" />
+                  <div>
+                    Office no 105, 1st floor,<br />
+                    Power plaza, lane no 7,<br />
+                    Koregaon park, Pune,<br />
+                    Maharashtra
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center text-white/80">
-                <Mail className="h-4 w-4 mr-3" />
-                <span>info@healthtechsolutions.com</span>
+
+              <div>
+                <h4 className="font-semibold text-white mb-2">UAE Office</h4>
+                <div className="flex items-start text-white/80">
+                  <MapPin className="h-5 w-5 mr-3 mt-1 flex-shrink-0 text-[#FF7200]" />
+                  <div>
+                    Office no 401,<br />
+                    Fintouch Decor,<br />
+                    Business Bay, Dubai
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center text-white/80">
-                <MapPin className="h-4 w-4 mr-3" />
-                <span>123 Healthcare Blvd, Suite 500, New York, NY 10001</span>
+
+              <div className="space-y-3">
+                <div className="flex items-center text-white/80">
+                  <Phone className="h-5 w-5 mr-3 text-[#4CAF50]" />
+                  <span>+1 (555) 123-4567</span>
+                </div>
+                <div className="flex items-center text-white/80">
+                  <Mail className="h-5 w-5 mr-3 text-[#4CAF50]" />
+                  <span>info@optisources.com</span>
+                </div>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-4 mt-6">
-              <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10">
-                <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10">
-                <Twitter className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10">
-                <Facebook className="h-5 w-5" />
-              </Button>
+            <div className="flex space-x-4 mt-8">
+              <a
+                href="https://www.linkedin.com/company/your-company"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition"
+              >
+                <Linkedin className="h-5 w-5" style={{ color: '#0A66C2' }} />
+              </a>
+
+              <a
+                href="https://twitter.com/your-company"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                title="Twitter"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition"
+              >
+                <Twitter className="h-5 w-5" style={{ color: '#1DA1F2' }} />
+              </a>
+
+              <a
+                href="https://www.facebook.com/your-company"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition"
+              >
+                <Facebook className="h-5 w-5" style={{ color: '#1877F2' }} />
+              </a>
             </div>
           </div>
 

@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import logo from "@/assets/optisources-logo.png";
+// logo image removed from nav to avoid duplicate branding in header
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,51 +27,40 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16 sm:h-18 lg:h-20 bg-white/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-xl px-4 sm:px-8 lg:px-12 border border-white/20 transition-all duration-300">
           
           {/* Logo Section */}
-          <div className="flex items-center space-x-2 sm:space-x-4">
-            <a href="#home" className="flex items-center">
-              <img 
-                src={logo} 
-                alt="OptiSources Logo" 
-                className="h-8 sm:h-10 lg:h-12 object-contain"
-              />
+          <div className="flex items-center">
+            <a href="#home" className="flex items-center space-x-3">
+                {/* image logo intentionally removed to keep header clean; keep text branding */}
+                <span className="hidden sm:inline-flex items-center text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
+                  <span className="text-[#FF7200]">Opti</span>
+                  <span className="text-[#002B80]">Sources</span>
+                </span>
             </a>
           </div>
-            <div className="flex items-center">
-              <a href="#home" className="flex items-center">
-                <div className="relative">
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight flex items-center">
-                    <span className="relative inline-flex items-center justify-center">
-                      <span className="text-[#FF7200]">O</span>
-                      {/* center the plus inside the O using flex + inset for consistent alignment */}
-                      <span className="absolute inset-0 flex items-center justify-center text-[#4CAF50] text-sm sm:text-base lg:text-lg font-bold transform -translate-y-0.5">+</span>
-                    </span>
-                    <span className="text-[#FF7200]">pti</span>
-                    <span className="text-[#002B80]">Sources</span>
-                  </div>
-                </div>
-              </a>
-            </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block flex-1 max-w-2xl mx-8">
             <div className="flex items-center justify-center space-x-4 lg:space-x-8 text-sm lg:text-base">
               <a href="#home" 
-                className="text-foreground hover:text-primary py-2 px-3 rounded-lg transition-all duration-200 hover:bg-primary/5">
+                className="relative font-medium text-[#002B80] hover:text-[#FF7200] py-2 px-4 rounded-lg transition-all duration-300 hover:bg-orange-50 group">
                 Home
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF7200] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </a>
               <a href="#about" 
-                className="text-muted-foreground hover:text-primary py-2 px-3 rounded-lg transition-all duration-200 hover:bg-primary/5">
+                className="relative font-medium text-[#002B80] hover:text-[#FF7200] py-2 px-4 rounded-lg transition-all duration-300 hover:bg-orange-50 group">
                 About
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF7200] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </a>
               
               <DropdownMenu>
                 <DropdownMenuTrigger 
-                  className="flex items-center text-muted-foreground hover:text-primary py-2 px-3 rounded-lg transition-all duration-200 hover:bg-primary/5">
+                  className="relative font-medium text-[#002B80] hover:text-[#FF7200] py-2 px-4 rounded-lg transition-all duration-300 hover:bg-orange-50 group flex items-center">
                   Services <ChevronDown className="ml-1 h-4 w-4" />
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF7200] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56 animate-in slide-in-from-top-2">
+                <DropdownMenuContent className="w-56 animate-in slide-in-from-top-2 bg-white/95 backdrop-blur-sm p-2">
                   {services.map((service, index) => (
-                    <DropdownMenuItem key={index} className="cursor-pointer">
+                    <DropdownMenuItem key={index} 
+                      className="cursor-pointer text-[#002B80] hover:text-[#FF7200] hover:bg-orange-50 rounded-lg my-1 px-4 py-2 transition-all duration-200">
                       {service}
                     </DropdownMenuItem>
                   ))}
@@ -79,8 +68,9 @@ const Navigation = () => {
               </DropdownMenu>
 
               <a href="#contact" 
-                className="text-muted-foreground hover:text-primary py-2 px-3 rounded-lg transition-all duration-200 hover:bg-primary/5">
+                className="relative font-medium text-[#002B80] hover:text-[#FF7200] py-2 px-4 rounded-lg transition-all duration-300 hover:bg-orange-50 group">
                 Contact
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF7200] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </a>
             </div>
           </div>
@@ -89,7 +79,7 @@ const Navigation = () => {
           <div className="hidden md:block">
             <Button 
               variant="default" 
-              className="bg-gradient-primary hover:shadow-glow hover:scale-105 transform transition-all duration-300 text-sm lg:text-base px-4 lg:px-6">
+              className="bg-gradient-to-r from-[#FF7200] to-[#FF5500] text-white hover:shadow-lg hover:shadow-orange-200/50 hover:scale-105 transform transition-all duration-300 text-sm lg:text-base px-6 lg:px-8 rounded-xl font-medium">
               Request Demo
             </Button>
           </div>

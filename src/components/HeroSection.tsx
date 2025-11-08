@@ -7,8 +7,7 @@ import { Counter } from "@/components/ui/counter";
 const HeroSection = () => { return ( 
 
 
-<section id="home" className="relative min-h-screen flex items-center overflow-hidden"> 
-
+<section id="home" className="relative min-h-screen overflow-hidden"> 
         {/* Background Image with Overlay */} 
         <div className="absolute inset-0">
           <img src={heroImage} alt="Professional healthcare team" className="w-full h-full object-cover" /> 
@@ -16,8 +15,8 @@ const HeroSection = () => { return (
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
         </div>
          {/* Content */} 
-         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
-          <div className="max-w-3xl">
+         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center min-h-screen"> 
+          <div className="max-w-3xl text-center mx-auto">
             <h1 className="hero-heading text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Transform Healthcare
               <span className="block text-[#FF7200] drop-shadow-lg">Revenue Management</span>
@@ -25,7 +24,7 @@ const HeroSection = () => { return (
             <p className="hero-paragraph text-xl md:text-2xl text-white mb-15 leading-relaxed font-light">
               Empowering healthcare organizations with AI-powered solutions for revenue cycle optimization, medical coding excellence, and compliance management.
             </p>
-          <div className="flex flex-col sm:flex-row gap-8 mt-8"> 
+          <div className="flex flex-col sm:flex-row gap-8 mt-8 justify-center"> 
             <Button 
               size="lg" 
               className="bg-primary text-white hover:bg-primary-light hover:scale-105 transition-all duration-300 text-lg px-8 py-4 rounded-xl font-semibold shadow-lg border-2 border-white/20 z-20"
@@ -47,7 +46,7 @@ const HeroSection = () => { return (
             <div className="mt-16 grid grid-cols-2 gap-12 max-w-xl mx-auto"> 
               <div className="text-center"> 
                   <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-none tracking-tight">
-                    <Counter end={98} suffix="%" />
+                     <Counter end={98} suffix="%" />
                   </div>
                 <div className="text-white/90 mt-2 text-sm md:text-base">Client Satisfaction</div> 
               </div>

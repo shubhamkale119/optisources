@@ -108,13 +108,13 @@ const AboutSection = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-[#4CAF50]/10 to-[#2E7D32]/20"></div>
             </div>
             {/* Floating Stats Card */}
-            <Card className="absolute -bottom-6 -left-6 bg-white rounded-lg border-none shadow-xl">
-              <CardContent className="p-6">
-                <div className="text-2xl font-bold bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] bg-clip-text text-transparent">
+            <Card className="absolute -bottom-6 -left-6 bg-gradient-to-br from-[#6A11CB]/80 to-[#11998e]/80 rounded-[20px] border-none shadow-[0_4px_24px_rgba(0,0,0,0.12)] backdrop-blur-md">
+              <CardContent className="p-7">
+                <div className="text-3xl font-extrabold bg-gradient-to-r from-[#fff] via-[#90cdf4] to-[#11998e] bg-clip-text text-transparent tracking-tight drop-shadow">
                   $2.5B+
                 </div>
-                <div className="text-sm text-gray-600 font-medium">
-                  Revenue Optimized
+                <div className="text-base font-semibold text-white/90 mt-2 tracking-wide">
+                  <span className="px-2 py-1 rounded bg-white/10 backdrop-blur-sm">Revenue Optimized</span>
                 </div>
               </CardContent>
             </Card>

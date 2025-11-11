@@ -123,7 +123,7 @@ const ContactSection = () => {
                 : "#FF7200"; // fallback orange
 
               return (
-                <Card key={index} className="border-border/50 hover:shadow-soft transition-all duration-300 group">
+                <Card key={index} className="bg-gradient-to-br from-[#2E8BC0] to-[#B8E0F5] text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:shadow-glow transition-all duration-300 ring-1 ring-white/20">
@@ -141,7 +141,7 @@ const ContactSection = () => {
             })}
 
             {/* CTA Card */}
-            <Card className="bg-gradient-to-br from-orange-400 to-orange-500 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden">
+            <Card className="bg-gradient-to-br from-[#2E8BC0] to-[#B8E0F5] text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden">
               <CardContent className="p-8 text-center bg-white/10 backdrop-blur-sm">
                 <h3 className="text-2xl font-bold mb-3 text-white drop-shadow-sm">Need Immediate Assistance?</h3>
                 <p className="text-white text-lg mb-6 leading-relaxed">
@@ -150,7 +150,7 @@ const ContactSection = () => {
                 <Button 
                   variant="secondary" 
                   size="lg" 
-                  className="w-full bg-white text-orange-500 hover:bg-orange-50 hover:scale-105 transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl rounded-xl"
+                  className="w-full bg-white text-[#2E8BC0] hover:bg-blue-50 hover:scale-105 transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl rounded-xl"
                 >
                   Schedule a Call
                 </Button>
